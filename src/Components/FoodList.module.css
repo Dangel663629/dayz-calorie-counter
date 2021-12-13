@@ -1,0 +1,33 @@
+.main {
+  border-top: 2px solid rgb(37, 16, 16);
+}
+
+.filterWrapper {
+  background: rgba(0, 132, 255, 0.15);
+  border-bottom: 2px solid rgba(0, 119, 255, 0.175);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0.5rem;
+}
+
+.select {
+  margin: 0.5rem 0.5rem 0rem 0rem;
+  height: 2.5rem;
+}
+
+.list ul {
+  padding: 1rem;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 215px));
+  grid-gap: 10px;
+  overflow-y: auto;
+  max-height: 82vh;
+  width: 95%;
+  margin: auto;
+  overflow-y: auto;
+}
+
+h2 {
+  color: rgb(0, 89, 172);
+}

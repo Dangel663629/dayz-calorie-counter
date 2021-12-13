@@ -1,0 +1,105 @@
+.foodItem {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 132, 255, 0.15);
+  border: 2px solid rgba(0, 119, 255, 0.175);
+  border-radius: 12px;
+  width: 13rem;
+  height: auto;
+  overflow: hidden;
+}
+
+.foodItem:hover {
+  animation: itemWrapper 0.25s forwards;
+}
+
+.foodItem:hover .titleWrapper {
+  animation: hoverWrapper 0.25s forwards;
+}
+
+.foodItem:hover img {
+  animation: hoverImage 0.25s forwards;
+}
+
+.titleWrapper {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.336);
+  background: rgba(0, 132, 255, 0.747);
+  color: white;
+}
+
+.foodItem h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 4px;
+}
+
+.imageWrapper {
+  display: flex;
+}
+
+.details {
+  align-self: center;
+}
+
+.details p {
+  font-size: 14px;
+  margin: 2px;
+}
+
+.foodItem img {
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
+  margin: 10px;
+}
+
+.foodItem button {
+  font-size: 14px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-self: center;
+  height: 1.625rem;
+  width: 65%;
+}
+
+.foodItem input {
+  font-size: 14px;
+  width: 3rem;
+  text-align: center;
+  margin: 1px;
+  border-radius: 4px;
+  border: none;
+  padding: 2px;
+}
+
+.removeButtonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes hoverImage {
+  100% {
+    transform: scale(1.075);
+  }
+}
+
+@keyframes hoverWrapper {
+  100% {
+    background: rgba(0, 107, 207, 0.747);
+  }
+}
+
+@keyframes itemWrapper {
+  100% {
+    background: rgba(0, 132, 255, 0.25);
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
