@@ -1,4 +1,4 @@
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 
 //making sure you can't scroll over page body when overlay is open
 export const useScrollHook = (visibility) => {
