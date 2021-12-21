@@ -1,5 +1,6 @@
 import classes from "./HeaderTotal.module.css";
 import ItemStatsHelper from "../Helpers/ItemStatsHelper";
+import HeaderMetabolismTime from "../Helpers/HeaderMetabolismTime";
 
 const HeaderTotal = (props) => {
   const totalCalories = props.array.reduce(
@@ -37,37 +38,17 @@ const HeaderTotal = (props) => {
   const calPercent = Math.round((totalCalories / 7500) * 100);
   const waterPercent = Math.round((totalWater / 5000) * 100);
 
-  const idleSeconds = (
-    Math.round((totalWater / 0.02) * 100) / 100
-  ).toLocaleString();
-  const idleMinutes = (
-    Math.round((totalWater / 1.2) * 100) / 100
-  ).toLocaleString();
-  const idleHours = Math.round((totalWater / 72) * 100) / 100;
+  const idleSeconds = Math.round(totalWater / 0.02);
+  let idleFunction = HeaderMetabolismTime(idleSeconds);
 
-  const walkSeconds = (
-    Math.round((totalWater / 0.08) * 100) / 100
-  ).toLocaleString();
-  const walkMinutes = (
-    Math.round((totalWater / 4.8) * 100) / 100
-  ).toLocaleString();
-  const walkHours = Math.round((totalWater / 288) * 100) / 100;
+  const walkSeconds = Math.round(totalWater / 0.08);
+  let walkFunction = HeaderMetabolismTime(walkSeconds);
 
-  const jogSeconds = (
-    Math.round((totalWater / 0.3) * 100) / 100
-  ).toLocaleString();
-  const jogMinutes = (
-    Math.round((totalWater / 18) * 100) / 100
-  ).toLocaleString();
-  const jogHours = Math.round((totalWater / 1080) * 100) / 100;
+  const jogSeconds = Math.round(totalWater / 0.3);
+  let jogFunction = HeaderMetabolismTime(jogSeconds);
 
-  const sprintSeconds = (
-    Math.round((totalWater / 0.5) * 100) / 100
-  ).toLocaleString();
-  const sprintMinutes = (
-    Math.round((totalWater / 30) * 100) / 100
-  ).toLocaleString();
-  const sprintHours = Math.round((totalWater / 1800) * 100) / 100;
+  const sprintSeconds = Math.round(totalWater / 0.5);
+  let sprintFunction = HeaderMetabolismTime(sprintSeconds);
 
   return (
     <div className={classes.total}>
@@ -101,17 +82,11 @@ const HeaderTotal = (props) => {
       <h2>Stomach statistics:</h2>
       <div className={classes.stomachDetails}>
         <p>Calories:</p>
-        <p>{totalCalories.toLocaleString()}</p>
-        <p>/</p>
-        <p>7,500</p>
-        <p>kcal</p>
+        <p>{totalCalories.toLocaleString()} / 7,500 kcal</p>
         <p>or</p>
         <p>~ {calPercent}%</p>
         <p>Water: </p>
-        <p>{totalWater.toLocaleString()}</p>
-        <p>/</p>
-        <p>5,000</p>
-        <p>mL</p>
+        <p>{totalWater.toLocaleString()} / 5,000 mL</p>
         <p>or</p>
         <p>~ {waterPercent}%</p>
       </div>
@@ -120,35 +95,19 @@ const HeaderTotal = (props) => {
         <p>
           <span>Idle for:</span>
         </p>
-        <p>{idleSeconds} seconds</p>
-        <p>or</p>
-        <p>{idleMinutes} minutes</p>
-        <p>or</p>
-        <p>{idleHours} hours</p>
+        <p>{idleFunction}</p>
         <p>
           <span>Walk for:</span>
         </p>
-        <p>{walkSeconds} seconds</p>
-        <p>or</p>
-        <p>{walkMinutes} minutes</p>
-        <p>or</p>
-        <p>{walkHours} hours</p>
+        <p>{walkFunction}</p>
         <p>
           <span>Jog for:</span>
         </p>
-        <p>{jogSeconds} seconds</p>
-        <p>or</p>
-        <p>{jogMinutes} minutes</p>
-        <p>or</p>
-        <p>{jogHours} hours</p>
+        <p>{jogFunction}</p>
         <p>
           <span>Sprint for:</span>
         </p>
-        <p>{sprintSeconds} seconds</p>
-        <p>or</p>
-        <p>{sprintMinutes} minutes</p>
-        <p>or</p>
-        <p>{sprintHours} hours</p>
+        <p>{sprintFunction}</p>
       </div>
     </div>
   );

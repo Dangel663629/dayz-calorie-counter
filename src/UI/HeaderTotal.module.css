@@ -40,13 +40,13 @@
 .stomachDetails {
   margin: 0.5rem 4rem;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 0.75fr 1fr 1fr 1fr 5fr;
+  grid-template-columns: 1.5fr 2.25fr 0.5fr 8fr;
 }
 
 .metabolismDetails {
   margin: 0.5rem 4rem;
   display: grid;
-  grid-template-columns: 1.5fr 2fr 0.75fr 1.75fr 0.75fr 3fr;
+  grid-template-columns: 1fr 6.5fr;
 }
 
 .metabolismDetails span {
