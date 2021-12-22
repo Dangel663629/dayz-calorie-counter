@@ -2,6 +2,19 @@
   display: flex;
 }
 
+.spinnerWrapper {
+  width: 55vh;
+  height: 75vh;
+  margin-right: 1.5rem;
+}
+
+.spinner {
+  height: 1rem;
+  width: 1rem;
+  padding-left: 45%;
+  padding-top: 55%;
+}
+
 .image {
   width: 55vh;
   height: 75vh;

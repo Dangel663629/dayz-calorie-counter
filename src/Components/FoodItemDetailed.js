@@ -3,10 +3,20 @@ import { useVariantHook } from "../Helpers/useVariantHook";
 import ModalOverlay from "../UI/ModalOverlay";
 import classes from "./FoodItemDetailed.module.css";
 import ItemStatsHelper from "../Helpers/ItemStatsHelper";
+import { useState } from "react";
+import { FadeLoader } from "react-spinners";
 
 const FoodItemDetailed = (props) => {
+  const [imageLoading, setImageLoading] = useState(true);
+
+  const changeImageLoadingHandler = () => {
+    console.log("I have loaded");
+    setImageLoading(false);
+  };
+
   const visibilityChangeHandler = () => {
     props.hideDetailedHandler();
+    setImageLoading(true);
   };
 
   const trueVariant = useVariantHook(props.item, props.variant);
@@ -28,11 +38,20 @@ const FoodItemDetailed = (props) => {
     <ModalOverlay onClick={visibilityChangeHandler}>
       <div className={classes.wrapper}>
         <div className={classes.imageContainer}>
+          <div
+            className={classes.spinnerWrapper}
+            style={{ display: imageLoading ? "block" : "none" }}
+          >
+            <div className={classes.spinner}>
+              <FadeLoader speedMultiplier={1.25} />
+            </div>
+          </div>
           <img
             className={classes.image}
             src={imageSource}
             alt={textVariant + props.item.food_name}
-            rel="preload"
+            onLoad={changeImageLoadingHandler}
+            style={{ display: imageLoading ? "none" : "block" }}
           />
         </div>
         <div className={classes.stats}>
