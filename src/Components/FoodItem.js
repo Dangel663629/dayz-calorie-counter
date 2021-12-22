@@ -18,7 +18,7 @@ const FoodItem = (props) => {
   useScrollHook(detailedVisibility);
 
   const trueVariant = useVariantHook(props.item, props.variant);
-  const imageSource = useImageSourceHook(props.item.food_id, trueVariant);
+  const imageSource = useImageSourceHook(props.item.food_id, trueVariant, true);
   const textVariant = trueVariant === "none" ? "" : `${trueVariant} `;
 
   const addItemHandler = () => {

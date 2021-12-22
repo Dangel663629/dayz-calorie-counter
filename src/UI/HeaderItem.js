@@ -36,14 +36,3 @@ const HeaderItem = (props) => {
 };
 
 export default HeaderItem;
-
-// const helperObject = props.headerArray.find(
-//   (item) => item.id === props.item.food_id && item.variant === trueVariant
-// );
-// if (helperObject !== undefined) {
-//   setRemoveItemVisibility(true);
-//   setRemoveButtonAmount(helperObject.amount);
-// } else {
-//   setRemoveItemVisibility(false);
-//   setRemoveButtonAmount(0);
-// }

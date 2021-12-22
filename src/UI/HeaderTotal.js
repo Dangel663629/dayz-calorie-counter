@@ -82,13 +82,13 @@ const HeaderTotal = (props) => {
       <h2>Stomach statistics:</h2>
       <div className={classes.stomachDetails}>
         <p>Calories:</p>
-        <p>{totalCalories.toLocaleString()} / 7,500 kcal</p>
-        <p>or</p>
-        <p>~ {calPercent}%</p>
+        <p>
+          {totalCalories.toLocaleString()} / 7,500 kcal or ~{calPercent}%
+        </p>
         <p>Water: </p>
-        <p>{totalWater.toLocaleString()} / 5,000 mL</p>
-        <p>or</p>
-        <p>~ {waterPercent}%</p>
+        <p>
+          {totalWater.toLocaleString()} / 5,000 mL or ~{waterPercent}%
+        </p>
       </div>
       <h2>Metabolism statistics:</h2>
       <div className={classes.metabolismDetails}>

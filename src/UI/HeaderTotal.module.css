@@ -28,19 +28,19 @@
   flex: 2;
   margin-right: 5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.75fr;
 }
 
 .details2 {
   flex: 3;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.75fr;
 }
 
 .stomachDetails {
   margin: 0.5rem 4rem;
   display: grid;
-  grid-template-columns: 1.5fr 2.25fr 0.5fr 8fr;
+  grid-template-columns: 1fr 6.5fr;
 }
 
 .metabolismDetails {
