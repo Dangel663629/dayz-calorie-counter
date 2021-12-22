@@ -32,7 +32,7 @@ const FoodItemDetailed = (props) => {
             className={classes.image}
             src={imageSource}
             alt={textVariant + props.item.food_name}
-            loading="lazy"
+            rel="preload"
           />
         </div>
         <div className={classes.stats}>
