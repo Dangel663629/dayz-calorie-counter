@@ -4,7 +4,7 @@ import ModalOverlay from "../UI/ModalOverlay";
 import classes from "./FoodItemDetailed.module.css";
 import ItemStatsHelper from "../Helpers/ItemStatsHelper";
 import { useState } from "react";
-import { FadeLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 
 const FoodItemDetailed = (props) => {
   const [imageLoading, setImageLoading] = useState(true);
@@ -43,7 +43,7 @@ const FoodItemDetailed = (props) => {
             style={{ display: imageLoading ? "block" : "none" }}
           >
             <div className={classes.spinner}>
-              <FadeLoader speedMultiplier={1.25} />
+              <PropagateLoader speedMultiplier={1.25} />
             </div>
           </div>
           <img

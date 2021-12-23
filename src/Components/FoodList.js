@@ -102,7 +102,7 @@ const FoodList = (props) => {
           onChange={searchTermChangeHandler}
           size="small"
           placeholder="Search for food..."
-          sx={{ margin: ".5rem .5rem 0rem 0rem" }}
+          sx={{ margin: ".5rem .5rem 0rem 0rem", minWidth: "5rem" }}
         />
         <Select
           value={sort}
